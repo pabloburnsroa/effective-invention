@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BookList from './components/books/BookList';
+import BookState from './context/book/BookState';
+import Navbar from './components/layout/Navbar';
+import BookForm from './components/books/BookForm';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BookState>
+        <Navbar />
+        <BookForm />
+        <BookList />
+      </BookState>
     </div>
   );
 }
